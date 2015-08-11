@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
 
+    // create global variables
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -18,13 +19,17 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // initialize the RecyclerView
         mRecyclerView = (RecyclerView)
                 findViewById(R.id.my_recycler_view);
 
-        //data
+        // String array of all the names
         String[] name = {"Stephanie","Erich","Ian","Sunny","Mike",
                          "Kayla","Jessica", "Bryan","Luke","Paige",
                          "Lindsey","Jake","Jeff","Carol", "Kevin"};
+
+        // String array of all the subjects
         String[] subject = {"Let's Get Coffee",
                             "Homework Assignment",
                             "Order Conformation",
@@ -39,6 +44,8 @@ public class MainActivity extends ActionBarActivity {
                             "Pizza Order Confirmed!",
                             "Google Play Receipt",
                             "Update Available"};
+
+        //String array of all messages
         String[] message =
                 {"Lorem ipsum dolor sit amet, consectetur adipiscing.",
                 "Sed molestie vel ligula aend. Duis condimentum erat.",
@@ -57,6 +64,7 @@ public class MainActivity extends ActionBarActivity {
                 "Nec ligula consectetur, tincidunt neque quis.",
         };
 
+
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);
@@ -66,6 +74,8 @@ public class MainActivity extends ActionBarActivity {
         mAdapter = new MyAdapter(name, subject, message);
         mRecyclerView.setAdapter(mAdapter);
     }
+
+    //THE CODE BELOW THIS COMMENT CAN BE IGNORED FOR THIS TUTORIAL
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

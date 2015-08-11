@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
+    // create global variables
     private String[] name;
     private String[] subject;
     private String[] message;
@@ -28,14 +30,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
+    // this is the constructor. It takes in 3 String arrays
     public MyAdapter(String[] names, String[] subjects, String[] messages) {
         name = names;
         subject = subjects;
         message = messages;
     }
 
-    // Create new views (invoked by the layout manager)
+    // Create new view to inflate
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
